@@ -19,8 +19,7 @@ request.onsuccess = function(event) {
 
   // check if app is online, if yes run uploadPizza() function to send all local db data to api
   if (navigator.onLine) {
-    // we haven't created this yet, but we will soon, so let's comment it out for now
-    // uploadTransaction();
+    uploadTransaction();
   }
 };
 
@@ -71,7 +70,7 @@ function uploadTransaction() {
         }
         // open one more transaction
         const transaction = db.transaction(['new_transaction'], 'readwrite');
-        // access the new_pizza object store
+        // access the new_transaction object store
         const budgetObjectStore = transaction.objectStore('new_transaction');
         // clear all items in your store
         budgetObjectStore.clear();
