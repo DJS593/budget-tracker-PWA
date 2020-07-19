@@ -56,8 +56,8 @@ self.addEventListener('install', function(e) {
 // Activate the service worker and remove old data from the cache
 self.addEventListener('activate', function(e) {
   e.waitUntil(
-    caches.keys().then(function (keyList) {
-      let cacheKeeplist = keyList.filter(function (key) {
+    caches.keys().then(function(keyList) {
+      let cacheKeeplist = keyList.filter(function(key) {
         return key.indexOf(APP_PREFIX);
       });
       cacheKeeplist.push(CACHE_NAME);
@@ -72,7 +72,7 @@ self.addEventListener('activate', function(e) {
       );
     })
   );
-}); 
+});
 
 
 // Intercept fetch requests
